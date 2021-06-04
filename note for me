@@ -1,0 +1,26 @@
+
+
+Syntex:
+=======
+app.get (endpoint, [handlerı, handler2, handler ... ]); 
+
+
+/* http://localhost:3000/invoice */
+
+function validateUser(req, res, next) {
+                // I will check logic to see user is logged in or not 
+                // validate the token if it's valid then only send
+                response 
+            }
+
+app.get('/invoice',validateUser, function(req, res) {
+                  //then allow him/her to download invoice
+            });
+
+app.get('/product',validateUser, function(req, res) {
+                  //send product response
+            });
+
+
+          
+
