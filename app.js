@@ -4,11 +4,13 @@ const chalk = require("chalk"); //print message in color code
 //console.log(chalk.yellow("Program started"));
 //console.log(chalk.red("Error while starting program"));
 const fs = require("fs");
-const app = express();
+
 var products = {};
 var isUserLoggedIn = false;
 
 var PORT = process.env.PORT || 8080;
+
+const app = express();
 
 fs.readFile("./data/products.json", function(err, data) {
   products = JSON.parse(data.toString());
@@ -58,7 +60,7 @@ app.get("/invoice", validateUser, function(req, res) {
   res.download(__dirname + "/data/invoice.pdf");
 });
 
-app.get("/invoice", function(req, res) {
+app.get("/products", function(req, res) {
   //res.download(__dirname + "/data/invoice.pdf");
   res.json(products);
 });
